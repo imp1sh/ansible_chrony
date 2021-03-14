@@ -33,7 +33,7 @@
 
 {% if chronyd_servers is defined %}
 {% for server in chronyd_servers %}
-server { server }
+server {{ server }}
 {% endfor %}
 {% endif %}
 
