@@ -1,0 +1,13 @@
+- name: Install chrony package
+  package:
+          name: "chrony"
+          state: present
+- name: Implant chrony configuration file
+  template:
+    src: chrony.conf.j2
+    dest: /usr/local/etc/chrony.conf
+- name: Enable chrony service
+  service:
+    name: chronyd
+    state: started
+    enabled: true
